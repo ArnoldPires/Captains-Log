@@ -1,0 +1,20 @@
+body {
+  background-color: darkgray;
+  font-family: system-ui, sans-serif;
+}
+.captainInfoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+img {
+  width: 20rem;
+  height: 30rem;
+}
+.captain-info {
+  font-size: 20px;
+}
+.logs {
+  display: flex;
+  flex-direction: column;
+}

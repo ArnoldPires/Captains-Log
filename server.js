@@ -38,12 +38,15 @@ app.set("view engine", "jsx");
 // Configure jsx engine with empty options object
 app.engine("jsx", jsxEngine({}));
 
+// Load up the CSS
+app.use(express.static('public'));
+
 // app.use("/logs", controllerLog);
 // app.use("/foodlog", controllerFood);
 
 // Home page
 app.get("/", (req, res) => {
-  res.send("Captains Log");
+  res.render("logs/Index");
 });
 
 // Lets you know if its connected to the mongo servers
