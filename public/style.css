@@ -2,7 +2,19 @@ body {
   background-color: darkgray;
   font-family: system-ui, sans-serif;
 }
-.captainInfoContainer {
+nav ul li {
+  list-style-type: none;
+}
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+ ul, .captainInfoContainer {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
