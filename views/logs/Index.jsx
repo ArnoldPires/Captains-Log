@@ -2,9 +2,11 @@ import React from "react";
 import moment from "moment";
 import DefaultLayout from "../layouts/DefaultLayout";
 
-export default function Index({ logs }) {
-  return (
-    <DefaultLayout>
+class Index extends React.Component {
+  render() {
+    const { logs } = this.props;
+    return (
+      <DefaultLayout>
       <div className="index-container">
         <h1>Captain Log Entries</h1>
         <div className='image-container'>
@@ -29,5 +31,8 @@ export default function Index({ logs }) {
         })}
       </div>
     </DefaultLayout>
-  );
+    )
+  }
 }
+
+module.exports = Index;

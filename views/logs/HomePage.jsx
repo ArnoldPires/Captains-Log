@@ -1,7 +1,7 @@
 const React = require('react');
 const DefaultLayout = require("../layouts/DefaultLayout");
 
-class Index extends React.Component {
+class HomePage extends React.Component {
   render() {
     return (
       <DefaultLayout>
@@ -28,4 +28,4 @@ class Index extends React.Component {
   }
 }
 
-module.exports = Index;
+module.exports = HomePage;

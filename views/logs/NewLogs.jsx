@@ -1,14 +1,15 @@
 import React from "react";
 import DefaultLayout from "../layouts/DefaultLayout";
 
-export default function NewLogs() {
-  return (
+class NewLogs extends React.Component {
+  render() {
+    return (
     <DefaultLayout>
       <div className="new-logs-container">
         <h2>Add an entry</h2>
         <form action="/logs/Index" method="POST">
           <div className="form-group">
-            <label htmlFor="title">Title:</label>
+            <label htmlFor="title">Title of Log:</label>
             <input type="text" id="title" name="title" />
           </div>
           <div className="form-group">
@@ -26,4 +27,7 @@ export default function NewLogs() {
       </div>
     </DefaultLayout>
   );
+  }
 }
+
+module.exports = NewLogs;
