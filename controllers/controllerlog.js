@@ -14,4 +14,25 @@ router.get("/index", async (req, res) => {
   }
 });
 
+// -------------
+// NEW
+// -------------
+router.get("/NewLogs", (req, res) => {
+  res.render("logs/NewLogs");
+});
+
+// -------------
+// CREATE
+// -------------
+router.post("/Index", async (req, res) => {
+  try {
+    if (req.body.shipIsBroken === "on") req.body.shipIsBroken = true;
+    if (req.body.shipIsBroken === "off") req.body.shipIsBroken = false;
+    await Log.create(req.body);
+    res.redirect("/logs/Index");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
