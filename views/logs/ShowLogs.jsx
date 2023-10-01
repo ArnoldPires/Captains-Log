@@ -17,14 +17,13 @@ class ShowLogs extends React.Component {
               <p>{moment(log.createdAt, "h:mm a").format("h:mm a")}</p>
             </div>
           </div>
+          <p>Is the ship broken? {log.shipIsBroken ? "Yes" : "No"}</p>
           <div>{log.entry}</div>
           <footer className="article-footer">
+            <a href={`/logs/${log._id}/edit`} role="button" className="btn-edit">Edit</a>
             <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
-              <input type="submit" value="delete" className="btn-outline" style={{ width: "auto" }} />
+              <input type="submit" value="Delete" className="btn-delete" style={{ width: "auto" }} />
             </form>
-            <a href={`/logs/${log._id}/edit`} role="button" className="btn-outline">
-              edit
-            </a>
           </footer>
         </article>
       </DefaultLayout>

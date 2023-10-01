@@ -1,44 +1,88 @@
+body, h1, h2, h3, ul, li, p, a {
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: darkgray;
   font-family: system-ui, sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1592035659284-3b39971c1107?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2063&q=80");
 }
 
 /*
 Nav page
 */
 
-nav ul li {
+nav {
+  background-color: #007bff;
+  padding: 10px 0;
+  margin-bottom: 1rem;
+}
+.nav-links {
   list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
 }
 .nav-link {
   text-decoration: none;
-  color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 .nav-link:hover {
+  background-color: #0056b3;
   text-decoration: underline;
-  color: red;
 }
 
 /*
 Home Page
 */
 
- ul, .captainInfoContainer {
+.homePage {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.homePage img {
+  width: 100%;
+  height: 30rem;
+  border-radius: 5px;
+}
+.captainInfoContainer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
 }
-img {
-  width: 20rem;
-  height: 30rem;
-  border-radius: 5rem;
+.img-wrap {
+  padding: 1rem;
 }
-.captain-info {
+.homePage .captain-info {
   font-size: 20px;
 }
-.logs {
+.homePage .logs {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+  width: fit-content;
+}
+.homePage .logs a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.homePage .logs a:hover {
+  background-color: #007bff;
+  color: white;
 }
 
 /*
@@ -57,7 +101,7 @@ NewLogs
   margin-bottom: 20px;
 }
 label {
-  display: block;
+  
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -161,29 +205,81 @@ article {
 .article-footer form {
   margin: 0;
 }
-.article-footer input[type="submit"] {
+.article-footer input[type="submit"].btn-delete {
   background-color: transparent;
-  border: 2px solid #007bff;
-  color: #007bff;
+  border: 2px solid #dc3545;
+  color: #dc3545;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-.article-footer input[type="submit"]:hover {
-  background-color: #007bff;
+.article-footer input[type="submit"].btn-delete:hover {
+  background-color: #dc3545;
   color: white;
 }
-.article-footer a {
+.article-footer a.btn-edit {
   text-decoration: none;
-  color: #007bff;
+  color: #28a745;
   padding: 10px;
-  border: 2px solid #007bff;
+  border: 2px solid #28a745;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-.article-footer a:hover {
-  background-color: #007bff;
+
+.article-footer a.btn-edit:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+/*
+EditLogs
+*/
+
+.edit-logs-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.edit-logs-container h2 {
+  margin: 0;
+}
+.edit-logs-container form {
+  margin-top: 20px;
+}
+.edit-logs-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.edit-logs-container input[type="text"],
+.edit-logs-container textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.edit-logs-container textarea {
+  resize: vertical;
+}
+.edit-logs-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+.edit-logs-container input[type="submit"] {
+  background-color: transparent;
+  border: 2px solid #28a745;
+  color: #28a745;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.edit-logs-container input[type="submit"]:hover {
+  background-color: #28a745;
   color: white;
 }

@@ -36,6 +36,44 @@ router.post("/Index", async (req, res) => {
 });
 
 // -------------
+// EDIT
+// -------------
+router.get("/:id/edit", async (req, res) => {
+  try {
+    const log = await Log.findById(req.params.id);
+    res.render("logs/EditLogs", { log });
+  } catch (error) {
+    cosnole.log(error);
+  }
+});
+
+// -------------
+// UPDATE
+// -------------
+router.put("/:id", async (req, res) => {
+  try {
+    if (req.body.shipIsBroken === "on") req.body.shipIsBroken = true;
+    if (req.body.shipIsBroken === "off") req.body.shipIsBroken = false;
+    await Log.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect(`/logs/${req.params.id}`);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// -------------
+// DELETE
+// -------------
+router.delete("/:id", async (req, res) => {
+  try {
+    await Log.findByIdAndRemove(req.params.id);
+    res.redirect("Index"); // redirect back to logs index
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// -------------
 // SHOW
 // -------------
 router.get("/:id", async (req, res) => {
