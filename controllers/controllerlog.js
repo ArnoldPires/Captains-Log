@@ -35,4 +35,17 @@ router.post("/Index", async (req, res) => {
   }
 });
 
+// -------------
+// SHOW
+// -------------
+router.get("/:id", async (req, res) => {
+  console.log(req.params.id);
+  try {
+    const log = await Log.findById(req.params.id);
+    res.render("logs/ShowLogs", { log: log });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

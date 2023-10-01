@@ -88,6 +88,7 @@ input[type="checkbox"] {
 /*
 Index Page
 */
+
 .index-container {
   max-width: 600px;
   margin: 0 auto;
@@ -123,4 +124,66 @@ Index Page
 .time-stamps {
   font-size: 14px;
   color: #888;
+}
+
+/*
+ShowLogs Page
+*/
+
+article {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.article-header h2 {
+  margin: 0;
+}
+.time-stamps {
+  font-size: 14px;
+  color: #888;
+}
+.article-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.article-footer form {
+  margin: 0;
+}
+.article-footer input[type="submit"] {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.article-footer input[type="submit"]:hover {
+  background-color: #007bff;
+  color: white;
+}
+.article-footer a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.article-footer a:hover {
+  background-color: #007bff;
+  color: white;
 }
