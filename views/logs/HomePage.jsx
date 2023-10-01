@@ -7,9 +7,7 @@ class Index extends React.Component {
       <DefaultLayout>
         <section className="homePage">
           <div className="captainInfoContainer">
-            <div className='image-container'>
-              <img src="https://trekmovie.com/wp-content/uploads/2017/11/picard.jpg" />
-            </div>
+            <img src="https://trekmovie.com/wp-content/uploads/2017/11/picard.jpg" />
             <div className="captain-info">
               <h1>Captain's Personal File</h1>
               <h4>Name: <span>Jean-Luc Picard</span></h4>
@@ -22,7 +20,7 @@ class Index extends React.Component {
           </div>
           <div className="logs">
           <a href="/logs/Index">Personal Logs</a>
-          <a href='#'>Personal Food Logs</a>
+          <a href='/logs/NewLogs'>Personal Food Logs</a>
           </div>
         </section>
       </DefaultLayout>

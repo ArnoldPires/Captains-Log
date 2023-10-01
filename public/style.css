@@ -2,6 +2,11 @@ body {
   background-color: darkgray;
   font-family: system-ui, sans-serif;
 }
+
+/*
+Nav page
+*/
+
 nav ul li {
   list-style-type: none;
 }
@@ -14,6 +19,10 @@ nav ul li {
   color: red;
 }
 
+/*
+Home Page
+*/
+
  ul, .captainInfoContainer {
   display: flex;
   align-items: center;
@@ -22,6 +31,7 @@ nav ul li {
 img {
   width: 20rem;
   height: 30rem;
+  border-radius: 5rem;
 }
 .captain-info {
   font-size: 20px;
@@ -29,4 +39,88 @@ img {
 .logs {
   display: flex;
   flex-direction: column;
+}
+
+/*
+NewLogs
+*/
+
+.new-logs-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn-outline:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/*
+Index Page
+*/
+.index-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.image-container img {
+  height: 20rem;
+}
+.log-entry {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.log-link {
+  text-decoration: none;
+  color: #007bff;
+}
+.log-link:hover {
+  text-decoration: underline;
+}
+.article-header {
+  display: flex;
+  justify-content: space-evenly;
+}
+.time-stamps {
+  font-size: 14px;
+  color: #888;
 }
