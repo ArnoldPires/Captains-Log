@@ -11,18 +11,11 @@ class DefaultLayout extends React.Component {
         <body>
           <nav>
             <ul className="nav-links">
-              <li>
-                <a href="/" className="nav-link">Captain's Profile</a>
-              </li>
-              <li>
-                <a href="../logs/Index" className="nav-link">View Logs</a>
-              </li>
-              <li>
-                <a href="../logs/NewLogs" className="nav-link">New Entry</a>
-              </li>
+              <li><a href="/" className="nav-link">Captain's Profile</a></li>
+              <li><a href="../logs/Index" className="nav-link">View Logs</a></li>
+              <li><a href="../logs/NewLogs" className="nav-link">New Entry</a></li>
             </ul>
-          </nav>
-          <h1>{this.props.title}</h1>
+          </nav>      
           {this.props.children}
         </body>
       </html>

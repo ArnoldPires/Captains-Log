@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Log = require("../models/modellog");
 
-// -------------
-// INDEX
-// -------------
+// Index
 router.get("/index", async (req, res) => {
   try {
     const logs = await Log.find();
@@ -14,68 +12,63 @@ router.get("/index", async (req, res) => {
   }
 });
 
-// -------------
-// NEW
-// -------------
+// New
 router.get("/NewLogs", (req, res) => {
   res.render("logs/NewLogs");
 });
 
-// -------------
-// CREATE
-// -------------
+// Create
 router.post("/Index", async (req, res) => {
   try {
-    if (req.body.shipIsBroken === "on") req.body.shipIsBroken = true;
-    if (req.body.shipIsBroken === "off") req.body.shipIsBroken = false;
-    await Log.create(req.body);
+    // Check if the shipIsBroken checkbox is checked
+    const shipIsBroken = req.body.shipIsBroken === "on";
+    await Log.create({
+      title: req.body.title,
+      entry: req.body.entry,
+      shipIsBroken: shipIsBroken,
+    });
     res.redirect("/logs/Index");
   } catch (error) {
     console.log(error);
   }
 });
 
-// -------------
-// EDIT
-// -------------
+// Edit
 router.get("/:id/edit", async (req, res) => {
   try {
     const log = await Log.findById(req.params.id);
     res.render("logs/EditLogs", { log });
   } catch (error) {
-    cosnole.log(error);
+    console.log(error);
   }
 });
 
-// -------------
-// UPDATE
-// -------------
+// Update
 router.put("/:id", async (req, res) => {
   try {
-    if (req.body.shipIsBroken === "on") req.body.shipIsBroken = true;
-    if (req.body.shipIsBroken === "off") req.body.shipIsBroken = false;
-    await Log.findByIdAndUpdate(req.params.id, req.body);
+    const shipIsBroken = req.body.shipIsBroken === "on";
+    await Log.findByIdAndUpdate(req.params.id, {
+      title: req.body.title,
+      entry: req.body.entry,
+      shipIsBroken: shipIsBroken,
+    });
     res.redirect(`/logs/${req.params.id}`);
   } catch (error) {
     console.log(error);
   }
 });
 
-// -------------
-// DELETE
-// -------------
+// Delete
 router.delete("/:id", async (req, res) => {
   try {
     await Log.findByIdAndRemove(req.params.id);
-    res.redirect("Index"); // redirect back to logs index
+    res.redirect("/logs/Index");
   } catch (error) {
     console.log(error);
   }
 });
 
-// -------------
-// SHOW
-// -------------
+// Show
 router.get("/:id", async (req, res) => {
   console.log(req.params.id);
   try {

@@ -63,6 +63,12 @@ Home Page
 .homePage .captain-info {
   font-size: 20px;
 }
+.captain-info h4 {
+  color: black;
+}
+.captain-info span {
+  color: #007bff;
+}
 .homePage .logs {
   display: flex;
   flex-direction: column;
@@ -161,7 +167,7 @@ Index Page
 .log-link:hover {
   text-decoration: underline;
 }
-.article-header {
+.cap {
   display: flex;
   justify-content: space-evenly;
 }
@@ -183,29 +189,29 @@ article {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: left;
 }
-.article-header {
+.cap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
 }
-.article-header h2 {
+.cap h2 {
   margin: 0;
 }
 .time-stamps {
   font-size: 14px;
   color: #888;
 }
-.article-footer {
+.editNdelete{
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.article-footer form {
+.editNdelete form {
   margin: 0;
 }
-.article-footer input[type="submit"].btn-delete {
+.editNdelete input[type="submit"].btn-delete {
   background-color: transparent;
   border: 2px solid #dc3545;
   color: #dc3545;
@@ -214,11 +220,11 @@ article {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-.article-footer input[type="submit"].btn-delete:hover {
+.editNdelete input[type="submit"].btn-delete:hover {
   background-color: #dc3545;
   color: white;
 }
-.article-footer a.btn-edit {
+.editNdelete a.btn-edit {
   text-decoration: none;
   color: #28a745;
   padding: 10px;
@@ -228,7 +234,7 @@ article {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.article-footer a.btn-edit:hover {
+.editNdelete a.btn-edit:hover {
   background-color: #28a745;
   color: white;
 }
