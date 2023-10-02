@@ -1,6 +1,6 @@
 import React from "react";
-import moment from "moment";
 import DefaultLayout from "../layouts/DefaultLayout";
+import moment from "moment";
 
 class Index extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class Index extends React.Component {
           {logs.map((log, index) => {
             return (
               <div className="log-entry" key={index}>
-                <header className="article-header">
+                <div className="cap">
                   <div>
                     <a className="log-link" href={`/logs/${log._id}`}>
                       <h3>{log.title}</h3>
@@ -26,7 +26,7 @@ class Index extends React.Component {
                     <p>{moment(log.createdAt, "MM/DD/YY").format("MM/DD/YY")}</p>
                     <p>{moment(log.createdAt, "h:mm a").format("h:mm a")}</p>
                   </div>
-                </header>
+                </div>
               </div>
             );
           })}

@@ -7,7 +7,7 @@ class HomePage extends React.Component {
       <DefaultLayout>
         <section className="homePage">
           <div className="log-entry">
-            <header className="article-header">
+            <div className="cap">
               <div className="captainInfoContainer">
                 <div className='img-wrap'>
                   <img src="https://trekmovie.com/wp-content/uploads/2017/11/picard.jpg" alt="Captain Picard" />
@@ -22,7 +22,7 @@ class HomePage extends React.Component {
                   <h4>Species: <span>Human</span></h4>
                 </div>
               </div>
-            </header>
+            </div>
             <div className="time-stamps logs">
               <a href="/logs/Index">Personal Logs</a>
               <a href='/logs/NewLogs'>Personal Food Logs</a>

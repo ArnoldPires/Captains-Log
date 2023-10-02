@@ -2,43 +2,42 @@ const express = require("express");
 const app = express();
 const jsxEngine = require("jsx-view-engine");
 const methodOverride = require("method-override");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 const controllerlog = require("./controllers/controllerlog");
 
-const dotenv = require("dotenv");
 dotenv.config();
 
-const mongoose = require("mongoose");
-
-const Log = require("./models/modellog");
-
-app.use(express.urlencoded({ extended: false }));
-
-app.use(methodOverride("_method"));
-
-app.use(express.static("public"));
-
-app.set("view engine", "jsx");
-app.engine("jsx", jsxEngine());
-
+// Configure mongoose
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-app.use("/logs", controllerlog);
-
-// Home page
-app.get("/", (req, res) => {
-  res.render("logs/HomePage");
-})
-
-// Lets you know if its connected to the mongo servers
 mongoose.connection.once("open", () => {
-  console.log("connected to mongo");
+  console.log("Connected to MongoDB");
 });
 
-// Setups the local host to 3000: http://localhost:3000/
-app.listen(process.env.PORT || 3000, () => {
-  console.log("listening to port 3000");
+// Middleware
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+
+// Set up JSX view engine
+app.set("view engine", "jsx");
+app.engine("jsx", jsxEngine());
+
+// Routes
+app.use("/logs", controllerlog);
+
+// Home page route
+app.get("/", (req, res) => {
+  res.render("logs/HomePage");
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });

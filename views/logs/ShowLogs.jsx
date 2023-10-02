@@ -1,6 +1,6 @@
 import React from "react";
-import moment from "moment";
 import DefaultLayout from "../layouts/DefaultLayout.jsx";
+import moment from "moment";
 
 class ShowLogs extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class ShowLogs extends React.Component {
     return (
       <DefaultLayout>
         <article className="log-entry">
-          <div className="article-header">
+          <div className="cap">
             <div>
               <h2>{log.title}</h2>
             </div>
@@ -19,12 +19,12 @@ class ShowLogs extends React.Component {
           </div>
           <p>Is the ship broken? {log.shipIsBroken ? "Yes" : "No"}</p>
           <div>{log.entry}</div>
-          <footer className="article-footer">
+          <section className="editNdelete">
             <a href={`/logs/${log._id}/edit`} role="button" className="btn-edit">Edit</a>
             <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
               <input type="submit" value="Delete" className="btn-delete" style={{ width: "auto" }} />
             </form>
-          </footer>
+          </section>
         </article>
       </DefaultLayout>
     );
